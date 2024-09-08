@@ -1,0 +1,89 @@
+I selected "a public coffee/vending machine at a university/dormitory/hospital/street" for the system and followed the outlined steps:
+
+1. Requirements:
+
+Functional Requirements:
+
+The machine should allow users to select beverages or snacks.
+It should provide a payment option (card/cash/phone payments).
+The machine should dispense the product after successful payment.
+It should provide options for customizing beverages (e.g., sugar level, milk type).
+The machine should show the current availability of products.
+It should provide a refund if the product cannot be dispensed.
+A maintenance mode should be available for refilling stock and troubleshooting.
+
+Non-Functional Requirements:
+
+The system should be user-friendly with a simple interface.
+It should handle multiple users per day without failure.
+The machine should respond to user actions in under 3 seconds.
+It should support multiple languages.
+Energy-efficient to minimize power consumption when idle.
+Secure and resistant to fraud or theft during transactions.
+
+2. Use Cases:
+
+Select Product: User selects a product from the list of available items.
+
+Actors: User
+Preconditions: Machine is operational.
+Postconditions: Product selection is confirmed.
+Process Payment: User inputs payment method (cash, card, phone).
+
+Actors: User
+Preconditions: Product is selected.
+Postconditions: Payment is processed successfully or fails.
+Dispense Product: After successful payment, the machine dispenses the product.
+
+Actors: Machine
+Preconditions: Payment is successful.
+Postconditions: Product is dispensed, and inventory is updated.
+Check Stock: Maintenance personnel check the stock levels of the machine.
+
+Actors: Maintenance Personnel
+Preconditions: Machine is operational.
+Postconditions: Stock report is displayed, and stock can be refilled.
+Maintenance Mode: The machine enters maintenance mode for refills or repair.
+
+Actors: Maintenance Personnel
+Preconditions: Machine is not serving customers.
+Postconditions: Machine is refilled or repaired.
+
+3. Objects, Classes, and Relationships:
+
+Product Class: Represents a snack or beverage.
+Attributes: name, price, quantity, type (snack/beverage), customization (optional)
+VendingMachine Class: Represents the main vending machine.
+Attributes: availableProducts, acceptedPaymentMethods, currentLanguage
+Relationships: Contains multiple Product objects, interacts with PaymentSystem
+PaymentSystem Class: Handles transactions.
+Attributes: paymentMethod, transactionStatus
+Relationships: Interacts with the VendingMachine and User
+User Class: Represents a user interacting with the machine.
+Attributes: selectedProduct, paymentMethod
+MaintenancePersonnel Class: Handles machine maintenance.
+Attributes: maintenanceID, stockManagement
+
+Class Diagram:
+
+VendingMachine
+
+Attributes: availableProducts, acceptedPaymentMethods, currentLanguage
+Methods: selectProduct(), displayProducts(), dispenseProduct(), enterMaintenanceMode()
+Product
+
+Attributes: name, price, quantity, type, customization
+Methods: adjustCustomization()
+PaymentSystem
+
+Attributes: paymentMethod, transactionStatus
+Methods: processPayment(), refund()
+User
+
+Attributes: selectedProduct, paymentMethod
+Methods: selectProduct(), makePayment()
+MaintenancePersonnel
+
+Attributes: maintenanceID, stockManagement
+Methods: checkStock(), refillStock(), repairMachine()
+
