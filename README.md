@@ -1,5 +1,5 @@
 # Class-diagrams
-EPAM, Advanced Java, Software Development Approaches, Object Oriented Design, Object Oriented Thinking
+EPAM, Java Fundamentals, Software Development Approaches, Object Oriented Design, Object Oriented Thinking
 
 Object-Oriented Thinking
 
